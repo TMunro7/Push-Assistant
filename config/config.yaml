@@ -30,7 +30,7 @@ smart_home:
 
   home_assistant:
     url: "http://192.168.1.126:8123"
-    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJmNzQzMzFkZmMyYzY0OGMzOWVkM2U0NzZjODg2MTA0MSIsImlhdCI6MTc3MzExNjYyOSwiZXhwIjoyMDg4NDc2NjI5fQ.ZA_-91YAjkC_7zpoMibwSyhHk2rLRgKwGngegeLyKUo"
+    token: # enter your smart home token here
 
 # ── Application shortcuts ──────────────────────────────────────
 # Maps spoken name -> executable name, full path, or URL.
