@@ -1,0 +1,63 @@
+# ==============================================================
+# Push Assistant — Configuration
+# ==============================================================
+
+# Key to HOLD for push-to-talk recording.
+# Special keys : scroll_lock | f9 | f10 | f12 | right_ctrl | right_alt
+# Character key: single letter, e.g. "z"
+hotkey: "subtract"
+
+# ── Audio ──────────────────────────────────────────────────────
+audio:
+  sample_rate: 16000   # Hz — Whisper expects 16 kHz
+  channels: 1          # Mono
+
+# ── Speech-to-Text ─────────────────────────────────────────────
+speech_to_text:
+  # Model sizes (larger = more accurate, slower, more RAM):
+  #   tiny   ~75 MB   ~1-2 s transcription
+  #   base   ~140 MB  ~2-3 s transcription
+  #   small  ~460 MB  ~4-6 s transcription
+  model: "tiny"
+  language: "en"         # Set to null to auto-detect language
+  compute_type: "int8"   # int8 = fastest CPU; use float32 on very old CPUs
+
+# ── Smart Home ─────────────────────────────────────────────────
+smart_home:
+  # provider options: home_assistant | none
+  # Set to "none" to disable smart home — just logs what it would do.
+  provider: "none"
+
+  home_assistant:
+    url: "http://homeassistant.local:8123"
+    token: "YOUR_LONG_LIVED_ACCESS_TOKEN"
+
+# ── Application shortcuts ──────────────────────────────────────
+# Maps spoken name -> executable name, full path, or URL.
+# Add any apps you want to open by voice here.
+apps:
+  discord:   "discord"
+  chrome:    "chrome"
+  firefox:   "firefox"
+  notepad:   "notepad"
+  explorer:  "explorer"
+  spotify:   "spotify"
+  vscode:    "code"
+  terminal:  "wt"          # Windows Terminal
+  # Websites — will open in the default browser
+  youtube:   "https://youtube.com"
+  reddit:    "https://reddit.com"
+  github:    "https://github.com"
+  twitter:   "https://twitter.com"
+  gmail:     "https://mail.google.com"
+
+# ── Smart home device map ──────────────────────────────────────
+# Maps spoken device name -> Home Assistant entity ID.
+# Only used when provider is "home_assistant".
+devices:
+  "desk light":         "light.desk_light"
+  "desk lamp":          "light.desk_lamp"
+  "bedroom lamp":       "light.bedroom_lamp"
+  "bedroom light":      "light.bedroom_light"
+  "living room light":  "light.living_room_light"
+  "fan":                "switch.fan"
