@@ -18,7 +18,7 @@ speech_to_text:
   #   tiny   ~75 MB   ~1-2 s transcription
   #   base   ~140 MB  ~2-3 s transcription
   #   small  ~460 MB  ~4-6 s transcription
-  model: "small"
+  model: "base"
   language: "en"         # Set to null to auto-detect language
   compute_type: "int8"   # int8 = fastest CPU; use float32 on very old CPUs
 

@@ -90,7 +90,7 @@ Open `config\config.yaml` and adjust:
 hotkey: "scroll_lock"     # key to hold while speaking
 
 speech_to_text:
-  model: "tiny"           # tiny / base / small
+  model: "base"           # tiny / base / small
   language: "en"
 
 apps:
@@ -267,7 +267,8 @@ if name == "myprovider":
 
 ```bat
 pip install pyinstaller
-pyinstaller --onefile --windowed --name PushAssistant --icon=icon.ico run.py
+pyinstaller --onefile --windowed --name PushAssistant --add-data ".venv\Lib\site-packages\faster_whisper\assets;faster_whisper\assets" run.py
+xcopy /E /I config dist\config
 ```
 
 | Flag | Purpose |
